@@ -14,19 +14,19 @@ LoadPlugin Interface
 
 Reload the collectd config. You should start to receive metrics on memory, cpu load, and network traffic. Verify this using the influxdb admin interface on localhost:8083.
 
-Now navigate to grafana, which is listening at localhost:3001. The username is admin, and the password is "password" because I hate security.
+Now navigate to grafana, which is listening at localhost:3001. The username is "admin", and the password is "password" because I hate security.
 
 Before we can show metrics, we need to connect grafana to Influxdb. Click the Grafana logo in the top left, and then click "Data Sources" in the menu that drops down.
 
 Click "Add Datasource" and fill in the following details:
 
-Name: Influx
-Default: yes
-Type: InfluxDB
-Url: http://influxdb:8086
-Database: riemann-local
-User: root
-Password: password
+- Name: Influx
+- Default: yes
+- Type: InfluxDB
+- Url: http://influxdb:8086
+- Database: riemann-local
+- User: root
+- Password: password
 
 
 Click the green "Add" button and you should get a flash to say "Success
