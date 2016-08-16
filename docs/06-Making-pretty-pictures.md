@@ -2,7 +2,7 @@
 
 Now that we have our metrics flowing into influxdb we can graph them.
 
-Start by adding some more metrics. 
+Start by adding some more metrics.
 
 Open collectd.conf from `collectd/root/etc/collectd/` and add the following lines
 
@@ -14,19 +14,19 @@ LoadPlugin Interface
 
 Reload the collectd config. You should start to receive metrics on memory, cpu load, and network traffic. Verify this using the influxdb admin interface on [localhost:8083](http://localhost:8083).
 
-Now navigate to grafana, which is listening at [localhost:3001](http://localhost:3001). The username is admin, and the password is "password" because I hate security.
+Now navigate to grafana, which is listening at [localhost:3001](http://localhost:3001). The username is "admin", and the password is "password" because I hate security.
 
 Before we can show metrics, we need to connect grafana to Influxdb. Click the Grafana logo in the top left, and then click "Data Sources" in the menu that drops down.
 
 Click "Add Datasource" and fill in the following details:
 
-Name: Influx
-Default: yes
-Type: InfluxDB
-Url: http://influxdb:8086
-Database: riemann-local
-User: root
-Password: password
+- Name: Influx
+- Default: yes
+- Type: InfluxDB
+- Url: http://influxdb:8086
+- Database: riemann-local
+- User: root
+- Password: password
 
 
 Click the green "Add" button and you should get a flash to say "Success
@@ -34,7 +34,7 @@ Data source is working"
 
 Click the grafana logo again, and then Dashboards > New.
 
-There is a green tab to the left of the screen, click on that to add a new graph panel. 
+There is a green tab to the left of the screen, click on that to add a new graph panel.
 
 In the general section, change the title to "CPU".
 In the metrics tab click "select measurement" to choose one of your cpu metrics, you should see it appear on the graph.
@@ -47,7 +47,7 @@ In the axes tab change the Left-Y axis's Unit dropdown to "None > percent (0 - 1
 
 You can display multiple metrics on a single graph, which is great for showing, for example, throughput vs latency, or CPU usage versus incoming web requests.
 
-In the Metrics tab, Click "Add query" and set the measurement to "load/load/shortterm". 
+In the Metrics tab, Click "Add query" and set the measurement to "load/load/shortterm".
 
 Unfortunately for us, load has a different scale from cpu usage. You can check this by navigating to the influxdb admin page and running the following queries:
 
