@@ -4,7 +4,7 @@ Now that we have our metrics flowing into influxdb we can graph them.
 
 Start by adding some more metrics. 
 
-Open collectd.conf from collectd/root/etc/collectd/ and add the following lines
+Open collectd.conf from `collectd/root/etc/collectd/` and add the following lines
 
 ```
 LoadPlugin Load
@@ -12,9 +12,9 @@ LoadPlugin Memory
 LoadPlugin Interface
 ```
 
-Reload the collectd config. You should start to receive metrics on memory, cpu load, and network traffic. Verify this using the influxdb admin interface on localhost:8083.
+Reload the collectd config. You should start to receive metrics on memory, cpu load, and network traffic. Verify this using the influxdb admin interface on [localhost:8083](http://localhost:8083).
 
-Now navigate to grafana, which is listening at localhost:3001. The username is admin, and the password is "password" because I hate security.
+Now navigate to grafana, which is listening at [localhost:3001](http://localhost:3001). The username is admin, and the password is "password" because I hate security.
 
 Before we can show metrics, we need to connect grafana to Influxdb. Click the Grafana logo in the top left, and then click "Data Sources" in the menu that drops down.
 
